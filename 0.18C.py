@@ -17,9 +17,21 @@ Có điểm dưới trung bình không: Có hoặc Không
 Danh sách điểm sau cải thiện: <các điểm đã được chỉnh sửa> (cách nhau bởi dấu cách)
 """
 
-A = list(map(int, input().split()))
-print("Trung binh cong:", round(sum(A) / len(A), 2))
-A.sort()
-print("Diem lon thu hai:", A[-2])
-print("Co diem duoi trung binh khong:", "Co" if min(A) <= 5 else "Khong")
-print("Danh sach diem sau khi cai tien:", " ".join(map(str, A)))
+a = list(map(int, input().split()))
+
+average = sum(a) / len(a)
+
+unique = sorted(set(a), reverse=True)
+if len(unique) >= 2:
+    second = unique[1]
+else:
+    second = unique[0]
+
+has_low = any(x <= 5 for x in a)
+
+improved = [6 if x < 6 else x for x in a]
+
+print(f"Trung bình cộng: {average:.2f}")
+print(f"Điểm lớn thứ hai: {second}")
+print(f"Có điểm dưới trung bình không: {'Có' if has_low else 'Không'}")
+print("Danh sách điểm sau cải thiện:", *improved)

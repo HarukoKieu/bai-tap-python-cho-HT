@@ -27,7 +27,7 @@ for c in s:
         print(c, s.count(c))
         seen.add(c)
         
-# Cách 2: Dùng dictionary để đếm tần suất xuất hiện của các ký tự trong xâu
+# Cách 2: Dùng dictionary để đếm tần suất xuất hiện của các ký tự trong xâu. cách này tối ưu hơn vì chỉ cần duyệt qua xâu một lần và lưu trữ tần suất xuất hiện của các ký tự trong một dictionary.
 
 s = input()
 
